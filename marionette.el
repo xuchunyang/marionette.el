@@ -151,7 +151,7 @@ Optional argument PORT defaults to 2828."
     (accept-process-output proc 0.01)
     proc))
 
-(defun marionette (fn)
+(defun marionette-with-page (fn)
   "Setup Marionette and run FN with one argument: PROC."
   (let ((proc (marionette-connect)))
     (marionette-request proc 'NewSession)

@@ -1,8 +1,16 @@
 # Control Firefox via the Marionette Protocol
 
+marionette.el lets you control the Firefox web browser via the [Marionette Protocol](https://firefox-source-docs.mozilla.org/testing/marionette/Protocol.html).
+
+To use this library, you need to have a running Firefox instance with the
+marionette protocol enabled. To do this, all you have to do is run the firefox
+binary with the `-marionette` flag. E.g.,
+
+    $ /Applications/Firefox.app/Contents/MacOS/firefox -marionette
+
 ``` emacs-lisp
 ;; Get Title of http://example.com
-(marionette
+(marionette-with-page
  (lambda (proc)
    (marionette-request proc 'Navigate :url "http://example.com")
    (marionette-request proc 'GetTitle)))
@@ -11,7 +19,7 @@
 
 ``` emacs-lisp
 ;; Take Screenshot of http://example.com, save to example.com.png
-(marionette
+(marionette-with-page
  (lambda (proc)
    (marionette-request proc 'Navigate :url "http://example.com")
    (let-alist (marionette-request proc 'TakeScreenshot :full t)
