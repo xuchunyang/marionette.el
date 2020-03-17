@@ -114,7 +114,7 @@
 (defun marionette-request (proc command &rest params)
   "Make a request to PROC, wait for a reply.
 COMMAND is webdriver command.
-PARAMS is parameters for COMMAND. 
+PARAMS is parameters for COMMAND.
 Return the response (type, message ID, error, result)."
   (let* ((id (pcase (process-get proc 'id)
                ('nil 0)
@@ -135,13 +135,15 @@ Return the response (type, message ID, error, result)."
                   (format "request %s failed:" command) error)))
        result))))
 
-(defun marionette-connect ()
-  "Make a connection, return the process."
+(defun marionette-connect (&optional host port)
+  "Make a connection, return the process.
+Optional argument HOST defaults to \"localhost\".
+Optional argument PORT defaults to 2828."
   (let ((proc (make-network-process
                :name "Marionette"
                :buffer " *Marionette*"
-               :host "localhost"
-               :service 2828
+               :host (or host "localhost")
+               :service (or port 2828)
                :coding 'utf-8
                :filter #'marionette--process-filter
                :filter-multibyte t)))
