@@ -7,6 +7,8 @@ marionette protocol enabled. To do this, all you have to do is run the firefox
 binary with the `-marionette` flag. E.g.,
 
     $ /Applications/Firefox.app/Contents/MacOS/firefox -marionette
+    # For macOS (open(1) does not block your terminal)
+    $ open -a Firefox --args -marionette
 
 ``` emacs-lisp
 ;; Get Title of http://example.com
