@@ -28,6 +28,7 @@
 ;;; Code:
 
 (require 'json)
+(require 'warnings)
 
 (defun marionette--message (format &rest args)
   "Message out with FORMAT with ARGS."
