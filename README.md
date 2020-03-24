@@ -35,6 +35,7 @@ binary with the `-marionette` flag. E.g.,
 ## References
 
 - [Marionette — Mozilla Source Tree Docs 76.0a1 documentation](https://firefox-source-docs.mozilla.org/testing/marionette/index.html)
+- [Marionette Commands](https://searchfox.org/mozilla-central/source/testing/marionette/driver.js)
 - [gecko-dev/marionette.py at master · mozilla/gecko-dev](https://github.com/mozilla/gecko-dev/blob/master/testing/marionette/client/marionette_driver/marionette.py)
 - [WebDriver](https://w3c.github.io/webdriver/)
 - [Marionette - Racket](https://docs.racket-lang.org/marionette/index.html)

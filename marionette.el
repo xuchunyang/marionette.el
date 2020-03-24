@@ -111,6 +111,7 @@
 
 (define-error 'marionette-error "marionette-error")
 
+;; https://searchfox.org/mozilla-central/source/testing/marionette/driver.js
 (defun marionette-request (proc command &rest params)
   "Make a request to PROC, wait for a reply.
 COMMAND is webdriver command.
